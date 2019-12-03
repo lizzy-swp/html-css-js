@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            js内容 
+<!--js的 引用方式有页头引入（head标签内），页中引用 （body标签内），
+元素事件中引入（标签属性中引入），引入外部文件（script引入地址）-->
+        </title>
+        <script>
+            document.write(typeof(1)+"<br/>"); /*typeof()返回括号内值的类型*/
+            var n=3.14159;
+/*变量用var 变量名；或var 变量名=值；声明*/
+            var str=n.toString()+26; 
+            var b=parseInt("3.1415926");
+            var c=parseFloat("3.1415926");
+            document.write(n+"<br>",str+"<br>",b+"<br>",c+"<br>");
+/*js可以自行转换数据类型，比如数字和字符串相加会将数值转换成字符串，这是 隐形转换，还可以手动转换，
+比如用parselnt（“首位为数值的字符串”）这是将数值的字符串转换为整型的数据，parsefloat（“数值”）可将数值的字符串转为浮点数
+.tostring（数值型整型或浮点型数据）这是将数值转换为字符串。*/
+            var myFunction= function()
+            {
+                document.write("没有指定函数名的函数");
+            } 
+            myFunction();
+/*函数都要先定义后调用，分为指定函数名和不指定函数名的函数，可以有返回值也可以没有，js有三种特殊函数
+嵌套函数、递归函数、内置函数*/
+            function Addnum(a,b)
+            {
+                var m=a+b;
+                return m;
+            }
+            var sum=Addnum(1,2);
+            document.write("相加的和是："+sum);
+            document.write("<br/>");
+            eval("x=10;y=10;document.write(x*y)");
+            document.write("<br/>");
+/*eval()把括号里的内容都当成函数去处理*/
+            document.write("isFinite（0）的返回值为："+isFinite(0)+"<br/>");
+/*isFinite（）可以确定一个数是否是有限数值 ，除了非数字、正无穷和负无穷返回false外，
+其他数值都返回true，字符串型的数字会转换为数字型，可以合成一段写，也可以分两段写
+document.write("isFinite（0）的返回值为："）；document.write(isFinite(0)+"<br/>")*/
+            document.write(escape("hello world!")+"<br/>");
+/*escape()主要用来对字符串进行编码，以便他们能在所有计算机上可读*/
+            var str="nihaoyaya";
+            document.write("字符串长度是："+str.length+"<br/>");
+/*字符串名.length（）用来返回字符串的长度*/
+            document.write(str.match("ni")+"<br/>");
+            document.write(str.match("nI")+"<br/>");
+            document.write(str.match("AAA")+"<br/>");
+/*字符串名.match（字符串／正则表达式）用来找字符串里有没有指定内容，有就返回指定内容，没有就返回null*/
+            document.write(str.search("ni")+"<br/>");
+            document.write(str.search("hahaha")+"<br/>");
+/*字符串名.search(字符串／正则表达式)用来找字符串里的指定内容，返回位子，没有就返回-1*/
+            document.write(str.indexOf("ya")+"<br/>");
+/*字符串名.indexOf(字符串)用来找字符串里的指定内容，返回第一次找到的位子，没有就返回-1*/
+            document.write(str.replace("yaya","haha")+"<br/>");
+/*字符串名.replace（）替换字符*/
+            document.write(str.charAt(3)+"<br/>");
+/*字符串名.chaAt()获取字符串某个位子的字符*/
+            document.write(str.toUpperCase()+"<br/>");
+/*字符串名.toUpperCase()将字符串转换大写字符串，字符串.toLowerCase()将字符串 转换为小写字符串*/
+/*字符串名1.localeCompare（字符串2）；比较两个字符串大小。1小于2返回小于零的数字，大于返回1，等于返回0*/
+/*字符串名.split（分隔符）将一个字符串分割成多段，遇到 分隔符就断一次*/
+/*字符串名.substring(开始位置，结束位置)在字符串中截取字符串*/
+/*字符串名.big／small／bold／strike／fontcolor（）等设置字体大小，粗体，删除线，颜色*/
+            document.write(Date()); 
+/*直接使用Date（）返回系统当前日期时间*/
+            var d= new Date();
+            var  my_day=d.getDate();
+            var  my_month=d.getMonth()+1;
+            var  my_year=d.getFullYear();
+            var  my_hour=d.getHours();
+            var  my_mimute=d.getMinutes();
+            var  my_second=d.getSeconds();
+            document.write("现在是"+my_year+"年"+my_month+"月"+my_day+"日"+
+            my_hour+"时"+my_mimute+"分"+my_second+"秒"+"<br/>");
+/*月加一是因为系统返回是从0开始的 ，加一就正好是月份*/
+            var d=new Date();
+            d.setFullYear(1992,10,29);
+            d.setHours(21,21,21,21)
+            document.write("cc的生日是："+d+"<br/>")  
+            document.write(d.toString()+"<br/>"); 
+/*日期对象转换为字符串*/
+            document.write(d.toUTCString()+"<br/>");
+/*日期根据世界事件把data转换为字符串*/
+            document.write(d.toLocaleString()+"<br/>");
+/*根据本地事件转换成字符串*/
+            document.write(d.getUTCDay()+"<br/>");
+            /*得到星期几的数字，0～6*/
+/*setfullyear()可以设置年月日，其中年是必填项，setmonth()是设置月日，月是必填，
+setdate（）是设置日子,sethours()是设置时，分，秒，毫秒，setminutes（）设置分，秒，毫秒，
+setseconds（）设置秒，毫秒，其中第一个是必填，后面的是选填项*/
+            var arr0=new Array("yi","er","san"); 
+/*字符串数组*/
+            var arr1=new Array(1,2,3); 
+/*数字数组*/
+            var  arr2=new Array(3); 
+/*三个元素的数组*/
+            arr2[0]="yi";
+            arr2[1]="er";
+            arr2[2]="san";
+            var arr=new Array();
+/*没有规定个数的数组*/
+            document.write(arr0,arr1,arr2);
+            document.write(arr0.length+"<br/>");
+            document.write(arr0.slice(0,2)+"<br/>");
+/*slice（切片，截取从0到1这两个数组元素）*/
+            arr0.unshift("ling");
+            document.write(arr0+"<br/>");
+/*数组名.unshift（新添的元素），这是在数组头增加元素*/
+            arr1.push(4);
+            document.write(arr1+"<br/>");
+/*push()在数组后谬安直接加元素*/
+            document.write(arr1.shift()+"<br/>");
+/*删除数组第一个元素且返回这个值*/
+            document.write(arr1.pop()+"<br/>");
+/*删除数组最后一个元素并返回这个元素*/
+            document.write(arr0.toString()+"<br/>");
+/*将数组转换为字符串*/
+            document.write(arr2.join()+"<br/>");
+            document.write(arr2.join("$")+"<br/>");
+/*将数组元素用分隔符链接成字符串，没有的话就是默认逗号*/
+            var arr4=new Array("ha","ho","he","hi");
+            document.write(arr4.concat(arr0)+"<br/>");
+/*连接两个活泼多个数组*/
+            function asc(a,b)
+            {
+            return a-b;
+            }
+            function des(a,b)
+            {
+            return b-a;
+            }
+            var arr5=new Array(1,3,2,4,5,6);
+            arr5.sort(des);
+            document.write(arr5.join("*")+"<br/>");
+            arr5.sort(asc);
+            document.write(arr5.join("*")+"<br/>");
+/*通过sort（）进行排序，升序或降序，前提是有定义升降序函数，直接调用*/
+            document.write(arr5.reverse()+"<br/>");
+/*reverse()反向排列*/
+            document.write(Math.PI+"<br/>");
+/*输出数学中pi的值*/
+            document.write(Math.max(1,2,5,3,7,6)+"<br/>");
+            document.write(Math.min(1,2,5,3,7,6)+"<br/>");
+/*输出最大最小值*/
+            document.write(Math.sqrt(4)+"<br/>");
+/*输出平方根，必须大于等于0，小于0会返回NaN*/
+            document.write(Math.pow(2,4)+"<br/>");
+/*pow()求2的4次幂，x,y必须是数字，结果是虚数或负数时返回NaN，过大返回Infinity*/
+            document.write(Math.abs(-4)+"<br/>");
+/*求绝对值*/
+            document.write(Math.round(-2.6)+"<br/>");
+/*四舍五入*/
+            document.write(Math.random()+"<br/>");
+/*返回 0～1之间的一个伪随机数*/
+            document.write(Math.ceil(-1.1)+"<br/>");  
+            document.write(Math.ceil(-1.9)+"<br/>");  
+            document.write(Math.ceil(9.1)+"<br/>"); 
+/*返回大于参数的最小整数，就是上舍入，比如9.1，比9.1大的最小整数是10*/ 
+            document.write(Math.floor(3.2)+"<br/>");
+            document.write(Math.floor(-0.9)+"<br/>");
+/*返回小于参数的最小整数，就是下舍入，比如3.2，比3.2小的最小整数是3*/ 
+            function open()
+            {window.open("http://www.baidu.com","","width=200,height=200");}
+/*open()打开新窗口，后面有三个参数：地址，窗口名称，参数，不用带px，系统默认了单位，可以用close（）关闭*/
+            function resize()
+            {window.resizeTo(200,200)；} 
+            function resize1()
+            {window.resizeBy(-200,-200)；}
+/*resizeto()改变窗口大小至设定值，resizeby（）放大或缩小多少窗口*/
+/*moveTo(x,y)窗口移动到距离左上角x,ypx处，moveBy（）窗口移动x,y距离，大于零向右向下，小于零反方向*/
+/*history.go/back/forward()去指定网页／上一页／下一页*/
+/*setTimeout(code,time);表示多少毫秒后执行code命令，一次性的，可用clearTimeout（）撤销；
+setInterval(code,time);设置重复性调用的函数，可多次使用，clearTimeout（）为撤销*/    
+            alert("提示框，\n(换行)没有返回值");
+            confirm("具有提示文字，返回“布尔值”（true或false）");
+            prompt("具有提示文字，返回“字符串”,比如输入名字等");
+            document.title("网页的标题");
+            document.write("创建日期"+document.fileCreatedDate);
+            document.write("修改日期精确到天"+document.fileModifiedDate);
+            document.write("修改日期精确到秒"+document.lastModified);
+            document.write("文件大小"+document.fileSize);
+/*查看文档信息*/
+            document.fgColor="white";
+            document.bgColor="blue";
+/*设置前景色（文字颜色）和背景色*/
+            document.write("当前页面的URL是："+document.URL);
+            document.linkColor="red"//链接的文字颜色
+            document.writeln("<pre>输入后会换行");
+            document.writeln("输入后会换行</pre>");
+/*document.getElementById("元素id");通过ID获取元素；document。getElementByName("元素名字")*/
+            var e = document.createElement("h1"); //创建元素节点
+            var txt = document.createTextNode("绿叶学习网"); //创建元素节点
+            e.appendChild(txt);    //把元素内容插入元素中去
+            document.body.appendChild(e);
+/*使用document.createElement()方法创建了h1标签，但是此时h1标签是没有内容；
+然后使用document.createTextNode()方法创建了一个“文本节点”。
+之后我们只有使用appendChild()方法往h1标签中插入文本节点，
+h1标签才有内容。最后使用“document.body.appendChild(e);”把新创建的节点h1输入到HTML文档中去。*/
+/*obj.appendChild(new);使用appenChild()方法把新的节点插入到当前节点的“内部”;
+obj.insertBefore(new,ref);使用insertBefore()方法将新的子节点添加到当前节点的“末尾”,obj表示父节点；
+new表示新的子节点；ref指定一个节点，在这个节点前插入新的节点*/
+/*obj.removeChild(oldChild);使用removeChild()方法来删除当前节点下的某个子节点,参数obj表示当前节点，
+而参数oldChild表示需要当前节点内部的某个子节点*/
+/*obj.cloneNode(bool);使用cloneNode()方法来实现复制节点,参数obj表示被复制的节点，而参数bool是一个布尔值
+1或true：表示复制节点本身以及复制该节点下的所有子节点；0或false：表示仅仅复制节点本身，不复制该节点下的子节点；*/
+/*obj.replaceChild(new,old);使用replaceChild()方法来实现替换节点,obj，表示被替换节点的父节点;
+new，表示替换后的新节点；old，需要被替换的旧节点。*/
+/*使用innerHTML和innerText这2个属性很方便地获取和设置某一个元素内部子元素或文本。
+innerHTML属性被多数浏览器所支持，而innerText只能被IE、chrome等支持而不被Firefox支持。
+差别在于，代码<div><b>绿叶学习网</b></div>，innerHTML返回值是"<b>绿叶学习网</b>"，
+innerText返回值是"绿叶学习网"*/
+/*在JavaScript中，对于元素的CSS操作，我们使用的是DOM对象中的style对象来操作。obj.style.属性名;
+obj指的是DOM对象，也就是通过document.getElementById()等获取而来的DOM元素节点对象。*/
+/*在JavaScript中，鼠标单击事件是onclick。鼠标移入和移出事件分别是onmouseover和onmouseout;
+鼠标的按下和松开事件分别是onmousedown和onmouseup;*/
+/*JavaScript键盘事件只有3个：
+onkeydown	按下键事件（包括数字键、功能键）
+onkeypress	按下键事件（只包含数字键）
+onkeyup	放开键事件（包括数字键、功能键）
+三个事件的执行顺序如下：onkeydown → onkeypress → onkeyup*/
+/*在JavaScript中，常用的表单事件有4种：
+（1）onfocus事件；获取焦点触发的事件
+（2）onblur事件；失去焦点触发的事件具有获得焦点和失去焦点事件的元素有3个：text；textarea；select；
+（3）onchange事件；
+（4）onselect事件；*/
+/*在JavaScript中，常见的编辑事件有3种：
+（1）复制事件oncopy；
+（2）剪切事件oncut；
+（3）粘贴事件onpaste；*/
+
+        </script>
+    </head>
+    <body>
+<!--js标识符 由字母、下划线或美元符号开头，其后的字符可以是字母，数字，下划线，美元符号。
+不能有加减空格等符号，不能和关键字等重名,js区分大小写且自动忽略多余空格-->
+<!--数据类型分基本数据类型（数字（整型、浮点型）、字符串、布尔型
+和特殊数据类型（空值null（系统未分配空间）、为定义值、转义字符（\b退格，\n回车换行、\‘单引号、\“双引号））-->
+<!--运算符：算术运算符、比较运算符、赋值运算符 、逻辑运算符、条件运算符（条件？表达式1:表达式2；）-->
+<!--表达式：赋值表达式 、算术表达式、布尔表达式、字符串表达式-->   
+<!--js程序处理流程；顺序、选择（if、if...else、if...else if、switch case default break）、
+循环（while、do...while、for）、break是彻底结束 循环，continue是结束本次循环-->
+            <input id="btn" type="button" value="anniu" onclick="open()">
+            <input type="button" value="改变大小" onclick="resize()">
+            <input type="button" value="改变大小" onclick="resize1()">
+    </body>
+</html>
