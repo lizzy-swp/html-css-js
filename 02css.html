@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>css内容</title> <!--css有三种引入方式：外部<link href="地址  type=“text／css”／>，
+            内部<style></style>，内联-->
+        <style type="text/css">
+            div{color: brown; font-family: 'Times New Roman', Times, serif; 
+            font-size: 20px; font-weight: bolder; font-style: oblique;}  
+            /*元素选择器，
+            font-family是选择字体，可选一个也可选多个，多个代表首选第一个，第一个没有用第二个，以此类推;
+            font-size代表字体大小，可写关键字或者像素值，关键字有xx-small最小、x-small较小、small小、
+            medium默认值正常、large大、x-large较大、xx-large最大，像素值就是xxpx、em、%等；
+            font-weight字体粗细，可取 关键字normal正常、lighter较细、bold较粗、bolder很粗或者100、200、300...900这些值
+            font-style字体倾斜*/
+            #nr3{color: burlywood;} /*id选择器*/
+            .lei1{color: chartreuse;} /*类选择器*/
+            #father1 p{color: cyan;} /*子元素选择器*/
+            #father2 #zi1{color:green;} /*子元素选择器*/
+            #nr10+p{color: indigo;} /*相邻选择器，选中同级的下一个元素*/
+            #nr12,.lei13,#nr14,ul{color: lightcoral;} /*群组选择器*/
+            #p1{text-decoration:underline; text-transform: uppercase; text-indent: 59px;}
+            #sc{text-decoration:line-through;text-transform: lowercase;text-indent: 28px;}
+            #dh{text-decoration:overline;text-transform: capitalize;} 
+            /*text-decoration设置下划线，删除线，上划线，去掉线等设置
+            text-transform英文大小写设置
+            text-indent是首行缩进*/
+            #jz{text-align: center; border-width: 2px; border-color: red; border-style: solid;
+            background-color: blue;} 
+            /*text-align文字位置，居中，左，右的设置，在文本和img里有效
+            vertical-align是垂直方向上的排列，top、middle、baseline、bottom
+            line-height行高
+            border是边框的意思，上诉三项可归位一项border：width style color；
+            还可以分四个方向，top，bottom，right，left；
+            background-color是背景颜色，此外还有background-image背景图片，background-repeat图像显示方式是否平铺
+            background-position图像定位在那个点，background-attachment图像是否和内容一起动或者固定不动*/
+            a{text-decoration: none;}
+            a:link {color: blue;} /*鼠标点击前的颜色*/
+            a:visited{color:blueviolet;} /*鼠标点击后的颜色*/
+            a:hover {color: red;} /*鼠标经过时颜色改变*/
+            a:active{color:yellow;cursor: pointer;} /*鼠标点击时颜色设置和鼠标尖头形状改变*/
+            ul{list-style-type: disc;}/*这是用css给列表选符号，无序列表有disc/circle/square三种
+            有序列表变成了decimal默认的数字符号／lower-roman/upper-roman/lower-alpha/upper-alpha
+            去掉设置的符号用none
+            可以自己设置图像作为符号，用list-style-image：ul（图像地址）；*/
+            table{border:1px solid red;border-collapse: collapse;caption-side: bottom;}
+            th,td{border:1px solid red;}
+            /*表格默认是有空格的线，border-collapse意思是去掉线与线之间的空隙
+            border-spacing:像素值；这是设置单元格边界的距离，只有一个是代表横向和纵向上的间距，两个像素值 
+            时代表一个横向间距一个纵向间距,这两个只要在table 里设置就可以
+            cpation-side设置表格标题的位置，top代表顶部，bottom代表底部，这个可以在table和caption里设置都行*/
+            #bk{border: 1px solid blue; width: 100px; height: 100px;padding: 30px;margin: 30px;}
+            #fd{border: 2px solid;width: 800px;height: 800px;background-color: palegreen;}
+            #fd1{border: 1px solid;width: 100px;height: 25px;padding: 20px;border: 10px solid orange;margin: 20px;}
+            #fd2{border: 1px solid;width: 100px;height: 25px;padding: 20px;border: 10px solid orange;margin: 20px;}
+            #fd3{border: 1px solid;width: 100px;height: 25px;padding: 20px;border: 10px solid orange;margin: 20px;}
+            #qcfd{clear: both;}
+             /* 浮动float:left/right可设置文字环绕效果
+             clear:left/right/both是清除浮动影响*/
+             #fd1{float: left;}
+             #fd2{float: right;}
+             #fd3{float: right;}
+             #gddw1{position: fixed;top: 100px;left: 100px;} /*固定定位是相对与屏幕而言*/
+             #gddw2{position: relative;top: 100px;left: 100px;}/*相对定位是相对与原来的位置做了相应的移动*/
+             #gddw3{position: absolute;top: 0;left: 0;}/*绝对定位是相对于浏览器页面位置而言的*/
+             /*静态定位position：static；元素不动在该在的位置*/
+        </style>
+    </head>
+    <body>
+        <div>内容1</div>
+        <p class="lei1">内容2</p>
+        <span id="nr3">内容3</span>
+        <div>内容4</div>
+        <span class="lei1">内容5</span>
+        <span id="father1">
+            <p>内容6</p>
+            <p>内容7</p>
+        </span>
+        <span id="father2">
+                <p id="zi1">内容8</p>
+                <p id="zi2">内容9</p>
+        </span>
+        <p id="nr10">内容10</p>
+        <p>内容11</p>
+        <p id="nr12">内容12</p>
+        <p class="lei13">内容13</p>
+        <span id="nr14">内容14</span>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul><br>
+        <p id="p1">下划线，absd</p>
+        <p id="sc">删除线，ABSD</p>
+        <p id="dh">顶划线，absd</p>
+        <span id="jz">这段文字居中处理</span>
+        <div id="baidu"> 
+            <a href="http://www.baidu.com" target="_blank">百度链接</a>
+        </div>
+        <table>
+            <caption>表格</caption>
+            <thead>
+                <tr>
+                    <th>表头1</th>
+                    <th>表头2</th>
+                </tr>
+            <tbody>
+                <tr>
+                    <td>内容1</td>
+                    <td>内容2</td>
+                </tr>
+            <tfoot>
+                <tr>
+                    <td>表脚1</td>
+                    <td>表脚1</td>
+                </tr>
+            </tfoot>
+            </tbody>
+            </thead>
+        </table>
+        <div id="bk">
+            边框属性
+        </div>
+        <div id="fd">
+            <div id="fd1">
+                第一个内容
+            </div>
+            <div id="fd3">
+                第二个内容
+            </div>
+            <div id="fd3">
+                第三个内容
+            </div>
+            <p id="qcfd">
+                    这是其他内容用来看效果的。这是其他内容用来看效果的。
+                    这是其他内容用来看效果的。这是其他内容用来看效果的。
+                    这是其他内容用来看效果的。这是其他内容用来看效果的。
+                    这是其他内容用来看效果的。这是其他内容用来看效果的。
+                    这是其他内容用来看效果的。这是其他内容用来看效果的。
+            </p>
+            <p id="gddw1">这个框固定定位在界面上，不随滚动条动而动</p>
+            <p id="gddw2">这个框相对定位在界面上，随滚动条动而动</p>
+            <p id="gddw3">这个框绝对定位在界面上，元素脱离正常文档流对立出来</p>
+            <p id="gddw4">这个框静态定位在界面上，默认的在哪就是哪</p>
+        </div>
+    </body>
+</html>
