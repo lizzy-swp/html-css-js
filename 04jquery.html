@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http//:www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery内容</title>
+        <style>
+        #list *{display:none;} /*将元素设为不可见*/
+        </style> 
+        <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+        <script type="text/javascript">
+            /*jquery中选择器分基础选择器
+            （基本选择器（元素选择器、id选择器、class选择器、群组选择器、*选择器（全选选择器））、
+            层次选择器（后代选择器 、子代选择器、兄弟选择器、相邻选择器）、
+            属性选择器($("选择器【属性=属性值】")1、选择含有class属性的div元素：$("div[class]"；
+            2、选择type属性值为checkbox的input元素（也就是选择所有复选框元素）：$("input[type = 'checkbox']")
+            3、选择type属性值不是checkbox的input元素：$("input[type != 'checkbox']")
+            4、选择class属性包含nav的div元素（因为class属性可以包含多个值）：$("div[class *= 'nav']")
+            5、选择name属性以group开始的input元素，例如<input type="radio" name="group-fruit"/>：$("input[name ^= 'group']")
+            6、选择name属性以group结尾的input元素，例如<input type="radio" name="fruit-group"/>：$("input[name $= 'group']")
+            7、选择具有id属性并且class属性是以nav开头的div元素，例如<div id="div1" class="lvye-div">绿叶学习网</div>：$("div[id][class ^='lvye']"))；
+            复合属性选择器，需要同时满足多个条件时使用：$("div[selector1][selector2]…[selectorN]") ）
+            和伪类选择器(简单伪类选择器(:not(selector)选择除了某个选择器之外的所有元素；
+            :first或first()	选择某元素的第一个元素（非子元素）
+            :last或last()	选择某元素的最后一个元素（非子元素）
+            :odd	选择某元素的索引值为奇数的元素,索引值是从0开始
+            :even	选择某元素的索引值为偶数的元素,索引值是从0开始
+            :eq(index)	选择给定索引值的元素，索引值index是一个整数，从0开始
+            :lt(index)	选择所有小于索引值的元素，索引值index是一个整数，从0开始
+            :gt(index)	选择所有大于索引值的元素，索引值index是一个整数，从0开始
+            :header	选择h1~h6的标题元素
+            :animated	选择所有正在执行动画效果的元素
+            :root	选择页面的根元素
+            :target	选择当前活动的目标元素（锚点）)
+            子元素伪类选择器(:first-child	选择父元素的第1个子元素
+            :last-child	选择父元素的最后1个子元素
+            :nth-child(n)	选择父元素下的第n个元素或奇偶元素，n的值为“整数|odd|even”
+            :only-child	选择父元素中唯一的子元素（该父元素只有一个子元素）
+            :first-of-type	选择同元素类型的第1个同级兄弟元素
+            :last-of-type	选择同元素类型的最后1个同级兄弟元素
+            :nth-of-type(n)	选择同元素类型的第n个同级兄弟元素，n的值可以是“整数|odd|even”
+            :only-of-type	匹配父元素中特定类型的唯一子元素（但是父元素可以有多个子元素）)；
+            可见性伪类选择器（：hidden和:visible）；
+            内容伪类选择器(:contains(text)	选择包含给定文本内容的元素
+            :has(selector)	选择含有选择器所匹配元素的元素
+            :empty	选择所有不包含子元素或者不包含文本的元素
+            :parent	选择含有子元素或者文本的元素（跟:empty相反）)；
+            表单伪类选择器(:input	选择所有input元素
+            :button	选择所有普通按钮，即type="button"的input元素
+            :submit	选择所有提交按钮，即type="submit"的input元素
+            :reset	选择所有重置按钮，即type="reset"的input元素
+            :text	选择所有单行文本框
+            :textarea	选择所有多行文本框
+            :password	选择所有密码文本框
+            :radio	选择所有单选按钮
+            :checkbox	选择所有复选框
+            :image	选择所有图像域
+            :hidden	选择所有隐藏域
+            :file	选择所有文件域)；
+            表单属性伪类选择器(:checked	选择所有被选中的表单元素，一般用于radio和checkbox
+            option:selected	选择所有被选中的option元素
+            :enabled	选择所有可用元素，一般用于input、select和textarea
+            :disabled	选择所有不可用元素，一般用于input、select和textarea
+            :read-only	选择所有只读元素，一般用于input和textarea
+            :focus	选择获得焦点的元素，常用于input和textarea)；)*/
+            $(function (){$("div").css("color","red");})
+            /*function()目表示要等body里的内容加载完再执行大括号里的内容，$("div")表示选中所以div元素*/
+            $(function (){$("#xiaolv").css("color","blue");})
+            /*function()目表示要等body里的内容加载完再执行大括号里的内容，$("#xiaolv")表示id选择器*/
+            $(function (){$(".qinkuai").css("color","yellow");})
+            /*function()目表示要等body里的内容加载完再执行大括号里的内容，$(".qinkuai")表示类选择器*/
+            $(function (){$("h1,h2,h3").css("color","grey");})
+            /*function()目表示要等body里的内容加载完再执行大括号里的内容，$("h1,h2,h3")表示群组选择器*/
+            $(function (){$("#first p").css("color","red");})
+            /*后代选择器，选择id=“frist”后的所有h5元素，包括子代和孙子带等所有后代*/
+            $(function (){$("#first>p").css("color","red");})
+            /*子代选择器，选中id=“frist”的子代，就选一代*/
+            $(function (){$("#second~p").css("color","red");})
+            /*兄弟选择器，选中id=“second”后面的同级p元素，不选前面的*/
+            $(function (){$("#second+p").css("color","red");})
+            /*相邻选择器，选择id=“second”后面的同级p元素一个，不选前面的和后面不是第一个的*/
+            $(function () {$("#btn").click(function () { $("#list :hidden").css("display", "block");}) })
+            /*可见性伪类选择器，设置点击后出现隐藏数据；visible选取所有可见元素，与:hidden相反*/
+            /*元素操作：属性操作（获取元素属性$().attr("属性名")、设置元素属性$().attr("属性","属性值")、
+            删除元素属性$().removeAttr("属性名");）、内容操作、样式操作*/
+            /*元素内容操作：1、html()（1、$().html()//获取HTML内容；
+            2、$().html("HTML内容");//设置HTML内容）
+            和text()(1、$().text()//获取文本内容；2、$().text("文本内容")//设置文本内容);
+            2、val();用于操作表单标签：1、$().val()//获取表单元素；2、$().val("表单元素的值")    //设置表单元素*/
+            /*获取css属性值：$().css("属性")
+            设置css属性值：$().css({"属性1":"属性值1","属性2":"属性值2",……})*/
+            /*类名操作：添加类名$().addClass("类名")、删除类名$().removeClass("类名")、切换类名$().toggleClass("类名")*/
+            /*元素的宽度和高度操作，我们一般情况下用width()和height()这2种方法,width()	width
+            innerWidth()	width + padding
+            outerWidth()	width + padding + border
+            $().width()      //获取元素的宽度
+            $().width(n)     //设置元素的宽度，n是一个整数，表示npx
+            height()	height
+            innerHeight ()	height + padding
+            outerHeight ()	height + padding + border
+            $().height()      //获取元素的高度
+            $().height(n)     //设置元素的高度，n是一个整数，表示npx*/
+            /*获取元素位置：offset（用于“获取”或“设置”元素相对于“当前文档”（也就是浏览器窗口）的偏移距离。）
+            和position（“获取”或“设置”当前元素相对于“其被定位的祖辈元素”的偏移距离。）*/
+            /*用scrollTop()来获取或设置元素相对于垂直滚动条顶部的距离，
+            可以使用scrollLeft()来获取或设置元素相对于水平滚动条左部的距离。*/ 
+            /*创建节点：var $变量名=“变量名内容”；
+                       $（“元素名”）.append($变量名)；表示向所选元素末尾插入内容*／
+            ／*$(a).appendTo（"b"）表示在b的末尾插入a
+               $(a).prepend（b）表示在a的内部的开始插入b
+               $(a).prependTo（b）将a插入到b内部的开始
+               $(a).before（b）在外部之前插入b
+               $(a).insertBefore（b）将a插入b外部之前
+               $(A).after(B)在a的外部之后插入b
+               $(A).insertAfter(B)将a插入b的外部之后*/
+            /*删除节点：$(a).remove（）此方法可以返回一个值，为删除的对象，是彻底删除，不仅会删除元素还会将绑定的事件页删除、
+            detach（）只会删除元素，绑定对象不会删除、
+            empty（）仅删除后代节点保留自身节点*/
+            /*$(a).cline()表示仅仅将A节点复制，但不复制A节点所绑定的事件。
+            $(A).clone(true)表示将A节点复制，并且复制A节点所绑定的事件。*/
+            /*$(A).replaceWith(B)表示用B来替换A。$(A).replaceAll(B)表示用A来替换B。*/
+            /*$(A).wrap(B)表示将A元素使用B元素包裹起来,将所有元素进行单独的包裹，
+            但是wrapAll()会将所有匹配的元素用一个元素来包裹！
+            $(A).wrapInner(B)表示将A元素“所有内部子元素”使用B元素包裹起来（不包括A本身）。*/
+            /*each()方法实现元素的遍历操作*/
+            /*$(document).ready()仅仅是DOM元素加载完成就可以执行，
+            而window.onload除了DOM元素加载完成外还需要等待所有外部文件加载完成才可以执行。*/
+            /*鼠标事件
+            click	鼠标单击事件
+            dbclick	双击事件
+            mouseover	移入事件
+            mouseout	移出事件
+            mousemove	移动事件
+            mousedown	按下事件
+            mouseup	松开事件*/
+            /*键盘事件有3种:
+            （1）keypress事件；只在按下键盘的任一“字符键”（如A~Z、数字键）时触发，
+            单独按下“功能键”（如F1~F12、Ctrl键、Shift键、Alt键等）不会触发；
+            （2）keydown事件；按下“字符键”还是“功能键”都会触发；
+            （3）keyup事件；keyup事件是在键盘的某个键被按下之后松开的一瞬间触发的事件。*/
+            /*表单事件有4种：
+            （1）focus()事件；
+            （2）blur()事件；
+            （3）change()事件；
+            （4）select()事件；*/
+            /*滚动事件scroll()常常和scrollTop()和scrollLeft()这两个方法结合使用。*/
+            /*在文档加载完成后，如果我们想要为元素绑定某个事件来完成某些操作，可以使用on()方法来实现。$().on(type , fn)
+            解绑事件$().off(type)*/
+            /*为所选元素绑定一个“只触发一次”的处理函数$().one(type , fn)*/
+            /*show()方法来显示元素，使用hide()方法来隐藏元素,toggle()方法来“切换”元素的“显示状态”。
+            也就是说，如果元素是显示状态，则变成隐藏状态；如果元素是隐藏状态，则变成显示状态。*/
+            /*fadeIn（）方法来实现元素的淡入效果，使用fadeOut（）方法来实现元素的淡出效果。
+            fadeIn（）和fadeOut（）这2个方法都是配合使用的。
+            fadeToggle（）方法通过不改变变化来切换匹配元素的“ 显示状态 ”。
+            则，如果元素是显示状态，则变成隐藏状态；如果元素是隐藏状态，则变成显示状态。
+            fadeToggle（）方法跟toggle（）方法很相似，
+            不过toggle（）方法通过更改高度，宽度，不透明度来实现动画的显示与隐藏，
+            而fadeToggle（）只通过不透明度来实现动画的显示与隐藏。*/
+            /*slideUp()实现元素的滑上效果，使用slideDown()方法来实现元素的滑下效果。
+            $().slideDown(speed , callback),$().slideUp(speed , callback)
+            我们可以使用slideToggle()方法来切换元素的“滑动状态”。
+            也就是说，如果元素是滑下状态，则变成滑上状态；如果元素是滑上状态，则变成滑下状态。*/
+            /*自定义动画，我们可以使用animate()方法来实现,$().animate(params , speed , callback);
+            animate({ "width": "+=100px", "height": "+=100px" }由于是累加动画
+            队列动画$().animate().animte()…….animte()
+            停止当前元素上正在执行的动画效果，可以使用stop()方法来实现
+            对动画进行延迟操作，可以用delay()方法来实现*/
+            /*jQuery过滤方法
+            hasClass()	判断所选元素是否含有某个类，返回值为true或false
+            eq(n)	选择元素集合中指定下标元素，下标从0开始（选择器作用）
+            is()	判断所选元素是否有符合某个条件的元素，返回值为true或false
+            not()	选择元素集合中不符合条件的元素（选择器作用）
+            filter()	使用“自定义表达式”来选择符合条件的元素（功能多）
+            has()	使用“自定义表达式”来选择符合条件的元素（功能少）*/
+            /*常见的查找方法共有5种：
+            （1）查找祖先元素:）parent()查找当前元素的“父元素”；parents()查找所有的祖先元素；
+            parentsUntil()查找指定范围的所有祖先元素；
+            （2）查找后代元素children()查找当前元素的“所有子元素”或“部分子元素”。
+            注意，children()方法只能查找子元素，不能查找其他后代元素；
+            contents()不仅获取子元素，还可以获取文本节点、注释节点等；find()能够查找所有后代元素；
+            （3）向前查找兄弟元素prev()查找某个元素的前一个“相邻”的兄弟元素；
+            prevAll()查找所选元素前面“所有”同级的兄弟元素；prevUntil()选择前面指定范围的兄弟元素；
+            （4）向后查找兄弟元素next()；nextAll()；nextUntil()；
+            （5）查找所有兄弟元素；siblings()方法来查找兄弟元素，这是不分前后的*/
+        </script>
+    </head>
+    <body>
+        <div>基础学习要做好</div>
+        <p id="xiaolv">学习效率要提高</p>
+        <p class="qinkuai">勤快使人进步</p>
+        <span class="qinkuai">糟乱思维要摒弃</span>
+        <div>坚定信念，认清事实</div>
+        <h1>广东深圳</h1>
+        <h2>江西上饶</h2>
+        <h3>福建福州</h3>
+        <div id="first">
+            <p>lvye的子元素</p>
+            <p>lvye的子元素</p>
+            <div id="second">
+                <p>lvye子元素的子元素</p>
+                <p>lvye子元素的子元素</p>
+            </div>
+            <p>lvye的子元素</p>
+            <p>lvye的子元素</p>
+        <div id="list">
+            <div>（1）HTML</div>
+            <p>（2）CSS</p>
+            <span>（3）JavaScript</span>
+        </div>
+        <input id="btn" type="button" value="显示" />
+    </body>
+</html>
+        `````
