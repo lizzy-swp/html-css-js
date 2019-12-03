@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">    <!--声明网页使用W3C的xhtml标准-->
+    <head>  <!--head有六种标签：meta,title,base,link,style,script-->
+           <!-- <meta charset="UTF_8> meta有两个重要属性name(keywords、description、author、copyright等)和http-equiv(定义页面使用的内容和自动刷新跳转)-->
+            <title>网页标题</title>
+    </head>
+    <body>
+            <h1>这是1级标题</h1> <!--一个页面只能有一个一级标题，作为本页题目-->
+            <h2>这是2级标题</h2>
+            <h3>这是3级标题</h3>
+            <h4>这是4级标题</h4>
+            <h5>这是5级标题</h5>
+            <h6>这是6级标题</h6>
+            <p>这是段落，内容写这！</p>
+            <p>这是第二个段落，回自动换行且和上一个段落有一段空隙</p>
+            第一句<br>第二句就换到下一行了，但是不会和段落标签p样有空隙。
+            <b>普通加粗</b><br>
+            <strong>语义化的加粗</strong><br>
+            <i>斜体文本1</i><br>
+            <cite>斜体文本2</cite><br>
+            <em>语义化斜体文本3</em><br>
+            <p>(a+b)<sup>2</sup></p>   <!--要放在上标的内容就放sup里-->
+            <p>O<sub>2<sub></p>   <!--下标内容放sub里-->
+            <p>普通文本大小，<big>大字号标签，</big><small>小字号标签。</small></p>
+            <p>删除线效果<s>5元</s></p>
+            <p><u>下划线效果</u></p>
+            <hr/>  <!--水平线标签-->
+            <div>
+                这是一个框，里面可以包含很多东西，body里可以放的这里都能放。body里有些特殊符号，比如空格（&nbsp；）、英文的双引号（&quot；）、左单引号（&isquo；）、右单引号（&rsquo；）
+                乘号（&times；）、除号（&divide；）、大于号（&it；）、小于号（&gt；）、与&（&amp；）、长破折号——（&mdash；）、竖线（&#124；） 、分节符（&sect；）、
+                版权符©️（&copy；）、注册商标®️（&reg；）、商标™️（&trade；）、欧元💶（&euro；）、 英镑💷（&pound；）、日元💴（&yen；）、度。（&deg；） 
+            </div>
+            <div>列表：分为有序列表（ol），无序列表（ul），定义列表，有序和无序列表里只能有li，不能有什么p这类的标签<br>
+                <ol type="1">  <!--type有五种类型：数字1、小写字母a、大写字母A、小写罗马字符i、大写罗马字符I。-->
+                        <li>有序列表第一项</li>
+                        <li>有序列表第二项</li>
+                        <li>有序列表第三项</li>
+                        <li>有序列表第四项</li>
+                </ol>
+                <ul type=“disc”> <!--type有三种：disc为黑色圆球，circle为空心圆，square为实心正方形-->
+                        <li>无序列表第一项</li>
+                        <li>无序列表第二项</li>
+                        <li>无序列表第三项</li>
+                        <li>无序列表第四项</li>
+                </ul>
+                <dl>
+                        <dt>定义名词1</dt>
+                        <dd>定义描述1</dd>
+                        <dt>定义名词1</dt>
+                        <dd>定义描述1</dd>
+                </dl>
+            </div>
+            <table border="solid"><!--表格默认没有边框，且现在很少使用表格这个元素-->
+                    <caption>表格的标题</caption>
+                    <thead>
+                            <tr>
+                                    <th>第一个格子</th>   <!--th是表头单元格，代表加粗居中-->
+                                    <th>第二个格子</th>
+                            </tr>      
+                    </thead>
+                    <tbody>
+                            <tr>
+                                    <td rowspan="2">第三个格子</td>
+                                    <td>第四个格子</td>
+                            </tr>
+                            <tr>
+                                    <td>第六个格子</td>
+                            </tr>
+                    </tbody>
+                    <tfoot>
+                            <tr>
+                                    <td colspan="2">第七个格子</td>
+                            </tr>
+                    </tfoot>
+            </table>
+            <img src="图像源文件的路径" alt="图片的描述信息，当图片不显示时出现的信息" title="悬停文字效果">
+            <!--图片分位图和矢量图-->
+            <a href="链接地址" target="目标窗口的打开方式：_self默认在当前窗口打开、_blank新窗口打开、_top在顶层框架中打开链接、_parent在当前框架的上一层里打开链接">超链接文字</a>
+            <!--链接分内部链接和外部链接，内部链接表示在统一个网站，外部表示跨网站链接，内部链接有个特殊的叫锚点链接，意思是只能在同一个网页里跳转，只需给某个部分设置id作为
+            锚点，然后在href里#id就可以跳转到锚点-->
+            <!--<form action="表单的处理程序，是表单要提交目的地的地址" name="表单名称，不能有特殊字符和空格" method="post或者get" 
+            target="目标窗口的打开方式：_self默认在当前窗口打开、_blank新窗口打开、_top在顶层框架中打开链接、_parent在当前框架的上一层里打开链接" 
+            enctype="application/x-www-form-urlencoded(默认)或者multipart/form-data(mime编码，对于上传文件这种表单必须使用这种)">
+                    对象有三种：input、textarea，select和option；
+            </form>-->
+            <form action=" " method="POST" enctype="multipart/form-data>
+                    姓名：<input type="text" value="文本框的默认值" size="6" maxlength="4"／> <br> <!--单行文本框，size是文本框长度几个字符，maxlength是最多数几个字符-->
+                    密码：<input type="password" value="文本框的默认值" size="6" maxlength="4"／> <br> <!--密码文本框-->
+                    <!--<input type="button" value=“普通按钮的取值” onclick=“js脚本程序”／> 普通按钮-->
+                    <!--<input type="submit" value=“提交按钮的取值”／>提交按钮-->
+                    <input type="reset" value=“重置按钮的取值”> <!--重置按钮-->
+                    单选：<input type="radio" name="单选按钮所在的组名" value="单选按钮的取值1"/>选项1
+                         <input type="radio" name="单选按钮所在的组名" value="单选按钮的取值2"/>选项2  <!--单选按钮-->
+                    复选框：<input type="checkbox" id=“1” value="复选框值" checked=“checked”／> 
+                    <label for="1">选项1</label> <br>
+                    <input type="checkbox" id=“2” value="复选框值"／> 
+                    <label for="2">选项2</label>  <br>
+                    <input type="checkbox" id=“3” value="复选框值"／> 
+                    <label for="3">选项3</label>  <br>
+                    <input type="checkbox" id=“4” value="复选框值"／> 
+                    <label for="4">选项4</label>  <br>
+                    <!--复选框，for指向id-->
+                    <input type="image" src="图1.jpg"／> <!--图像形式的提交按钮-->
+                    <!--<input type="hidden"> 隐藏字段 -->
+                    <input type="file"> <!--文件上传-->
+                    请输入文本：<textarea name="多行文本框" id="duo1" cols="30" rows="10">多行文本框内容</textarea><br>
+                    下拉菜单：<select name="下啦菜单" id="xia1" size=“3” multiple=“multiple”> <!--multiple是可选属性，设置了代表可选多个选项，size是列表展开可显示几行-->
+                            <option value="选择1" selected=“selected”>选1</option>
+                            <option value="选择2">选2</option>
+                            <option value="选择3">选3</option>
+                            <option value="选择4">选4</option>
+                            <option value="选择5">选5</option>
+                    </select>     
+            </form>
+            按钮：<button>这是一个按钮，不再表单里</button>
+            <!--<embed src="多媒体文件地址" width=“播放界面的宽度” hight=“播放界面的高度”／></embed>视频、音频、flash等-->
+            <!--<bgsound  src="背景音乐地址" loop=“循环的次数：2/infinite（无限次）／-1（无限次）”／>背景音乐在IE浏览器才有效-->
+            <!--浮动框架<iframe src="浮动框架的源文件" width=“浮动框架的宽”  hight=“浮动框架的高” scrolling ="取值auto左对齐默认选项／yes有滚动条／no没有滚动条"></iframe>-->    
+    </body>
+</html>
